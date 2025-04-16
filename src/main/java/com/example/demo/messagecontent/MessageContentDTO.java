@@ -1,9 +1,11 @@
-package com.example.demo.mesageroom;
+package com.example.demo.messagecontent;
 
+import com.example.demo.messageroom.EMessageType;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
+
 @Data
 public class MessageContentDTO {
     private UUID id;

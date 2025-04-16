@@ -1,4 +1,6 @@
-package com.example.demo.mesageroom;
+package com.example.demo.messagecontent;
+import com.example.demo.messageroom.EMessageType;
+import com.example.demo.messageroom.MessageRoom;
 import com.example.demo.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,39 +8,36 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "message_room")
+@Table(name = "message_content")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 @Builder
-public class MessageRoom {
+public class MessageContent {
     @Id
     @GeneratedValue(generator = "UUID", strategy = GenerationType.AUTO)
     private UUID id;
 
-    private String name;
-
-    private Boolean isGroup;
+    private String content;
 
     @CreatedDate
-    private LocalDateTime createdDate;
+    private LocalDateTime dateSent;
+
+    @Enumerated(EnumType.STRING)
+    private EMessageType messageType;
 
     @ManyToOne
-    @JoinColumn(name = "createdBy")
-    private User createdBy;
+    @JoinColumn(name = "message_room_id")
+    private MessageRoom messageRoom;
 
-    @OneToMany(mappedBy = "messageRoom", cascade = CascadeType.ALL)
-    private List<MessageRoomMember> members;
-
-    @OneToMany(mappedBy = "messageRoom", cascade = CascadeType.ALL)
-    private List<MessageContent> messageContents;
+    @ManyToOne
+    @JoinColumn(name = "username")
+    private User user;
 }

@@ -1,11 +1,14 @@
 package com.example.demo.user;
 
+import com.example.demo.messageroom.MessageRoom;
+import com.example.demo.mesageroomember.MessageRoomMember;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name="user")

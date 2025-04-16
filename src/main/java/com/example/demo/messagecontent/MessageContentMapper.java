@@ -1,5 +1,8 @@
-package com.example.demo.mesageroom;
+package com.example.demo.messageroom;
+import com.example.demo.messagecontent.MessageContent;
+import com.example.demo.messagecontent.MessageContentDTO;
 import com.example.demo.user.User;
+import com.example.demo.user.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 

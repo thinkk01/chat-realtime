@@ -1,4 +1,4 @@
-package com.example.demo.mesageroom;
+package com.example.demo.messageroom;
 
 public enum EMessageType {
     TEXT

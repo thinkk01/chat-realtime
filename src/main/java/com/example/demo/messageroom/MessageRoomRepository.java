@@ -1,4 +1,4 @@
-package com.example.demo.mesageroom;
+package com.example.demo.messageroom;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface MessageContentRepository extends JpaRepository<MessageContent, UUID> {
+public interface MessageRoomRepository extends JpaRepository<MessageRoom, UUID> {
 }
